@@ -3,6 +3,8 @@
 #include <locale.h>
 
 int main(void) {
+    setlocale(LC_ALL, "Portuguese_Brazil.1252");
+
     int n1, n2, soma;
 
     printf("Digite um número, por favor: ");

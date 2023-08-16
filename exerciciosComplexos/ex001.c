@@ -10,7 +10,6 @@ struct BankAccount {
 void registerAccount(struct BankAccount bankAccounts[], int *quantityAccounts) {
     if (*quantityAccounts >= 15) {
         printf("Registered account limit reached!\n");
-        return;
     }
 
     printf("Enter account number: ");
@@ -19,7 +18,6 @@ void registerAccount(struct BankAccount bankAccounts[], int *quantityAccounts) {
     for (int index = 0; index < *quantityAccounts; index++) {
         if (bankAccounts[index].accountNumber == bankAccounts[*quantityAccounts].accountNumber) {
             printf("Account with that number already exists!\n");
-            return;
         }
     }
 
@@ -49,7 +47,6 @@ void viewAllClientAccounts(struct BankAccount bankAccounts[], int quantityAccoun
 void deleteLowestBalanceAccount(struct BankAccount bankAccounts[], int *quantityAccounts) {
     if (*quantityAccounts == 0) {
         printf("No registered account!\n");
-        return;
     }
 
     int lowestBalanceIndex = 0;
@@ -67,7 +64,7 @@ void deleteLowestBalanceAccount(struct BankAccount bankAccounts[], int *quantity
     printf("Account with lower balance deleted!\n");
 }
 
-int main(void) {
+void main() {
     struct BankAccount bankAccounts[15];
     int quantityAccounts = 0;
     int option;
@@ -98,6 +95,4 @@ int main(void) {
                 printf("Invalid option!\n");
         }
     } while (option != 4);
-
-    return 0;
 }
